@@ -28,8 +28,12 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+def get_word(part_of_speech):
+    user_word=input(f"Please enter a(n) {part_of_speech}: ")
+    return user_word
+
 ###############################################################################
-# TODO: 2. (3 pts)
+# DONE: 2. (3 pts)
 #
 #   Now, write a function called name() that simply asks the user to enter
 #   their name and return the name they enter.
@@ -42,6 +46,10 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+def username():
+    username = input("Please enter your name: ")
+    return username
 
 ###############################################################################
 # TODO: 3. (9 pts)
@@ -67,4 +75,13 @@
 #   Make sure you call your main() function after you define it.
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
-###############################################################################
+###############################################################################\
+def main ():
+    print(f"Let's play Mad Libs!")
+    username1=username()
+    print(f'Welcome, {username1}! ')
+    noun=get_word('noun')
+    verb=get_word('verb ending in -ing')
+    adjective=get_word('adjective')
+    print(f"This semester, I hope to join the {noun} club and go {verb}. It is going to be a(n) {adjective} semester!")
+main()

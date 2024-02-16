@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (3 pts)
+# DONE: 1. (3 pts)
 #
 #   In this module, we are going to create a program that will help the user
 #   calculate how much they earned in week at work.
@@ -20,9 +20,11 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def get_hours(day_of_week):
+    hrs_on_day = input(f"How many hours did you work on {day_of_week}? ")
+    return float(hrs_on_day)    
 ###############################################################################
-# TODO: 2. (3 pts)
+# DONE: 2. (3 pts)
 #
 #   Now, write a function called calculate_hours() that takes 5 keyword
 #   arguments:
@@ -36,7 +38,9 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def calculate_hours(mon,tues,wed,thurs,fri):
+    total_hours=mon+tues+wed+thurs+fri
+    return total_hours
 ###############################################################################
 # TODO: 3. (3 pts)
 #
@@ -56,9 +60,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def calculate_pay(total_hours,pay_rate):
+    money=total_hours*pay_rate
+    return money
 
 ###############################################################################
-# TODO: 4. (9 pts)
+# DONE: 4. (9 pts)
 #
 #   Now, let's put it all together.
 #
@@ -103,3 +110,17 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    print("Let's calculate your pay!" )
+    mon=get_hours('Monday')
+    tues=get_hours('Tuesday')
+    wed=get_hours('Wednesday')
+    thurs=get_hours('Thursday')
+    fri=get_hours('Friday')
+    hours=calculate_hours(mon=mon,wed=wed,fri=fri,tues=tues,thurs=thurs)
+    hourly_pay = float(input("How much are you currently paid per hour? "))
+    paid=calculate_pay(total_hours=hours,pay_rate=hourly_pay)
+    print(f'Monday: {mon} hour(s)\nTuesday: {tues} hour(s)\nWednesday: {wed} hour(s)\nThurday: {thurs} hour(s)\nFriday: {fri} hour(s)')
+    print(f'Total Hours: {hours} hour(s)\nPay Rate: ${round(hourly_pay,2)} per hour \nTotal Pay: ${round(paid,2)}')
+
+main()
